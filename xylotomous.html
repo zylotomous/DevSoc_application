@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Zylotomous</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="stylesv2.css">
+</head>
+<body>
+<div class = 'columns'>
+    <div class = 'left-column'>
+        <div class = 'content-panel' id = 'content'>
+            <div class = 'content-section active' id = 'introduction'>
+                <h1> Introduction </h1>
+                <p> Hi I'm Nathan. </p>
+                <p> I'm a second year ACTL Co-op student at UNSW. Since I'm restricted to a single degree,
+                    my goal is to learn as much about compsci and software dev as I can, as the ACTL COMP double was my original plan.
+                </p>
+                <p>    
+                    This project itself was already a great introduction to HTML as I learned how to structure the different classes etc. and 
+                    I learnt a decent bit about structuring with HTML. For background, my coding experience is limited basically to only
+                    Python (for Leetcode) and small R projects for ACTL, which don't really require much programming structure compared to 
+                    how I had to make sure all the divs were properly aligned here. 
+                </p>
+                <p>    
+                    I usually split my free time between coding, league of legends, and any competitive mobile game. 
+                </p>
+            </div>
+        
+
+            <div class = 'content-section' id = 'interests'>
+                <h1> Interests </h1>
+                <p> As I mentioned earlier, my interests are: </p>
+                <ul>
+                    <li> Leetcode: Designing algos are pretty cool, still working on being good at it though </li>
+                    <li> League of legends: Renek/AA player trying to get back to dia peak. Ever since hullbreaker was changed I live and die by the fact that toplane has zero impact </li>
+                    <li> Mobile games: CR - Mortar Cannon cart, COC - RC charge,  Brawl stars, Honour of Kings. Honestly, any mainstream high skill expression game I probably have played at some point </li>
+                    <li> I also enjoy training some calisthenics right now too </li>
+                </ul>
+            </div>
+
+            <div class = 'content-section' id = 'projects'>
+                <h1> Projects </h1>
+                <p> This is an interesting topic because I struggle with long-term projects. I typically find the aesthetics part of project development tedious 
+                    and if I'm going to be honest, this is the part I need the most help with as I struggle with creative design. 
+                </p>
+                <p>
+                    My github is just a repo of my leetcode solutions as I enjoy solving problems. With that being said, I still want to learn software development
+                    as that is the real-world application of coding, whereas at the end of the day algos are just fun. 
+                </p>
+                <p>
+                    I'll leave the link to my Github here if you want to check it out: <a href = 'https://github.com/zylotomous'> https://github.com/zylotomous </a>
+                </p>
+                
+            </div>
+
+            <div class = 'content-section' id = 'other'>
+                <h1> Other </h1>
+                <p> Not too much to say here, apart from the fact that I learnt some basic HTML, CSS and JS to make this website.
+                    Even then, I spent a lot of time to get this far, trying to understand JS when I've coded exclusively in Python 
+                    and R.
+                </p>
+                <p>    
+                    Other sports I used to play include waterpolo, basketball, although nowadays the 
+                    mundanity of modern life post-high school has left me time to pursue other interests. 
+                </p>   
+                    Philosophy has also been something I enjoy from time to time, part of me actually wanted to study it at uni,
+                    but then I would be homeless.
+                <p>
+                    I can only thank my English teacher for introducing me to Oscar Wilde's Dorian Gray,
+                    as well as my Year 12 experiences with TS Eliot and Albert Camus.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class = 'middle-column'>
+        <div class = 'clock-container'>
+            <div class = 'clock-face'>
+                <button class ='clock-button' id='btn-12' data-section='introduction' style = 'top: 10px; left: 50%; transform: translateX(-50%); border: 2px solid black'>
+                    <span class='button-name'> 12 </span>
+                    <span class='button-label'> Introduction </span>
+                </button>
+
+                <button class = 'clock-button' id = 'btn-3' data-section = 'interests' style = 'right: 10px; top: 50%; transform: translateY(-50%); border: 2px solid black'>
+                    <span class='button-name'> 3 </span>
+                    <span class='button-label'> Interests </span>
+                </button>
+
+                <button class = 'clock-button' id = 'btn-6' data-section = 'projects' style = 'bottom: 10px; left: 50%; transform: translateX(-50%); color: #fff; border:2px solid #fff'>
+                    <span class='button-name'> 6 </span>
+                    <span class='button-label'> Projects </span>
+                </button>
+
+                <button class = 'clock-button' id = 'btn-9' data-section = 'other' style = 'left: 10px; top: 50%; transform: translateY(-50%); color: #fff; border:2px solid #fff'>
+                    <span class='button-name'> 9 </span>
+                    <span class='button-label'> Other </span>
+                </button>
+            </div>
+        
+
+            <div class = 'hour-hand' id = 'hour-hand'> </div>
+            <div class = 'minute-hand' id = 'minute-hand'> </div>
+        </div>
+    </div>
+
+    <div class = 'right-column'>
+        <div class = 'image-container'>
+            <img src='renek.webp' alt='Dawnbringer renek for the day n night theme'>
+            <figcaption> Dawnbringer Renek for the day n night theme </figcaption>
+           
+        </div>
+    </div>
+</div>
+
+<script>
+    const buttons = document.getElementsByClassName('clock-button');
+    const sections = document.getElementsByClassName('content-section');
+    const hourhand = document.getElementById('hour-hand');
+    const clockface = document.querySelector('.clock-face');
+    const btnid = ['btn-12', 'btn-3', 'btn-6', 'btn-9'];
+    const images = ['renek.webp', 'sob.png','aa.jpg', 'mrwilde.webp'];
+    const captions = ['Dawnbringer Renek - Because its morning on the clock',
+                      'My rank because 3am is the best soloq time. I swear I have hit dia at least before ',
+                      'Lunar eclipse Aatrox - Because its evening',
+                      'Funny photo of Mr Wilde'
+    ]
+    const imgcontainer = document.querySelector('.image-container img');
+    const captioncontainer = document.querySelector('.image-container figcaption');
+
+    
+    document.body.classList.add('btn-12');
+
+    for (let btn of buttons) 
+        btn.addEventListener('click', () => 
+    {
+        
+        document.getElementById('content').scrollTo(0, 0);
+
+        if (btnid.includes(btn.id)) 
+        {
+            const index = btnid.indexOf(btn.id);
+            const angle = index * 90;
+            hourhand.style.transform = `translate(-50%, -100%) rotate(${angle}deg)`;
+            
+            imgcontainer.src = images[index];
+            captioncontainer.textContent = captions[index];
+
+            document.body.classList.remove(...btnid);
+            
+            document.body.classList.add(btnid[index]);
+
+            if (index === 2 || index === 3)
+            {
+                clockface.style.borderColor = 'white';
+            }
+            else
+            {
+                clockface.style.borderColor = 'black';
+            }
+        }
+        
+        const clickedsection = btn.getAttribute('data-section');
+
+        for (let sec of sections) 
+        {
+            if (sec.id === clickedsection) 
+            {
+                sec.classList.add('active');
+            } 
+            else 
+            {
+                sec.classList.remove('active');
+            }
+        }
+
+        
+        
+    })
+
+</script>
+
+
+
+
+
+</body>
